@@ -9,7 +9,7 @@ If working on Colab, simply [![Open In Colab](https://colab.research.google.com/
 ### Steps
 1. Clone this repository: `git clone -b general https://github.com/chrisemezue/lafand-mt.git `
 
-2. Working with data. Your data needs to be of the form [here](https://github.com/chrisemezue/lafand-mt/tree/general/joeytrainer/sample_data/JW) in order to work with this repository.   
+2. Working with data. Your data needs to be like t[his](https://github.com/chrisemezue/lafand-mt/tree/general/joeytrainer/sample_data/JW) in order to work with this repository.   
 
     It is important to have the data saved in the `JW` directory. To do this simply run the code below:
     ```
