@@ -1,4 +1,4 @@
-## Running Lafand-MT experiments FOR ANY LANGUAGE (Beta testing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13yVM4b7T74GDbGwDl0bPT-Ry0S8_rk48?usp=sharing)
+## Running Lafand-MT experiments FOR ANY LANGUAGE (Beta testing)
 
 This is to run the JoeyNMT experiments on `joeytrainer` with ease.
 
