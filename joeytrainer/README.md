@@ -4,6 +4,8 @@ This is to run the JoeyNMT experiments on `joeytrainer` with ease.
 
 Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/main/joeytrainer), we merge and simplify many of the `.sh` files to reduce the stress in editing the files.
 
+If working on Colab, simply [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13yVM4b7T74GDbGwDl0bPT-Ry0S8_rk48?usp=sharing), make a copy and go through the cells. 
+
 ### Steps
 1. Clone this repository: `git clone -b general https://github.com/chrisemezue/lafand-mt.git `
 
@@ -34,11 +36,13 @@ If you don't have Joey NMT already installed on your system, this file takes car
 
     - For `en->ig` for 10k, you run `bash create_and_train.sh en ig 10k lafandEnIg10`. 
     - For `ig->en` for 20k vocab size, you run `bash create_and_train.sh ig en 20k lafandIgEn20`
-      `lafandEnIg10` and `lafandIgEn20` are just names I gave them.
+      
+      `lafandEnIg10` and `lafandIgEn20` are just names I gave them. You can give put any name you want there.
 
 
 ____
 The sole aim of this revision was to ease the process after attending to many requests from volunteers training on separate languages. The idea is to enable very few tweaking in order to successfully run the experiments.
+
 
 Please communicate all issues as Github issues or better still,  pull requests. Alternatively you can contact Chris Emezue on the Masakhane Slack. 
 
