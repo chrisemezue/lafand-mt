@@ -20,9 +20,10 @@ Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/m
 3. `bash install_spm.sh` to install the sentencepiece model if you don't have it. Look at the `install_spm` folder if you are running experiments on a cluster.
 
 4. `bash setup.sh`:
-If you don't have Joey NMT already installed on your system, this file creates a virtual environment called jnmt, clones the joeynmt github page and install the needed requirement. 
+If you don't have Joey NMT already installed on your system, this file takes care of it.
 
-5. `bash vocab_process.sh SRC TGT` where you edit `SRC`  and `TGT` to your source and target languages respectively. For example, if your source language is `en` and your target language is `yo`, you run `bash vocab_process.sh en yo`. 
+5. `bash vocab_process.sh SRC TGT` where you edit `SRC`  and `TGT` to your source and target languages respectively. 
+For example, if your source language is `en` and your target language is `yo`, you run `bash vocab_process.sh en yo`. 
 
 6. `bash create_and_train.sh SRC TGT SIZE TASK_NAME`. This file merges the `createconfig.sh` and `train.sh` files into one. 
 
