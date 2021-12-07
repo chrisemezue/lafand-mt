@@ -12,7 +12,7 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=<PATH_TO_ENV>
 make -j $(nproc)
 make install
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:<PATH_TO_ENV>/env"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:<PATH_TO_ENV>/lib"
 ```
 
 - Here we assume you are running your experiments on a python environment. You can refer [here](https://docs.python.org/3/library/venv.html) for python environments.
