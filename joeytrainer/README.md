@@ -9,11 +9,14 @@ Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/m
 
 2. Working with data. Your data needs to be of the form [here](https://github.com/chrisemezue/lafand-mt/tree/general/joeytrainer/data/JW) in order to work with this repository.   
 
-It is important to have the data saved in the `JW` directory. To do this simply run the code below:
-```
-rsync -a <PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE> <PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>/joeytrainer/data/JW
-```
-and edit `<PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE>` and `<PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>` accordingly. 
+    It is important to have the data saved in the `JW` directory. To do this simply run the code below:
+    ```
+    rsync -a <PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE> <PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>/joeytrainer/data/JW
+    ```
+    and edit `<PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE>` and `<PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>` accordingly. 
+    
+    > TO DO: Make this process easier.
+
 3. `bash install_spm.sh` to install the sentencepiece model if you don't have it. Look at the `install_spm` folder if you are running experiments on a cluster.
 
 4. `bash setup.sh`:
