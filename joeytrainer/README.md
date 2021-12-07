@@ -11,41 +11,38 @@ Comparing with the old version, we merge and simplify many of the `.sh` files to
 2. `bash setup.sh`:
 If you don't have Joey NMT already installed on your system, this file creates a virtual environment called jnmt, clones the joeynmt github page and install the needed requirement. 
 
-3. `bash ProcessData.sh` (optional):
-Incase any your dataset is still in the tsv format, containing parallel texts, then it has to be separated to independent files for each of the languages. This the format that can be used for training. 
+3. The `vocab_process.sh`. This file has the following lines of code:
+    ```bash
+    src=en
+    tgt=ig
+    bash train_sp.sh $src $tgt
+    bash apply_sp.sh $src $tgt
+    bash buildvocab.sh $src $tgt
+    ```
+    All you need to do is change the `src` and `tgt` to your source and target languages respectively.
 
-4. The `vocab_process.sh`. This file has the following lines of code:
-```
-src=en
-tgt=ig
-bash train_sp.sh $src $tgt
-bash apply_sp.sh $src $tgt
-bash buildvocab.sh $src $tgt
-```
-All you need to do is change the `src` and `tgt` to your source and target languages respectively.
-
-5. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
+4. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
 
 For each language direction and vocabulary size, you create and run a separate `create_and_run.sh` file. 
 
 For example, say I want to train `en->ig` for 10k and `ig->en` for 20k, then I will create two `.sh` files as follows:
 
 - For `en->ig` for 10k, you only need to create a copy of the `create_and_train.sh` file and edit the following :
-```
-src=en
-tgt=ig
-size=10k
-name=lafandEnIg10 #make this name unique to your task
+        ```bash
+        src=en
+        tgt=ig
+        size=10k
+        name=lafandEnIg10 #make this name unique to your task
 
-```
-- For `ig->en` for 20k vocab size, you'll do the same:
-```
-src=ig
-tgt=en
-size=20k
-name=lafandIgEn20 #make this name unique to your task
-```
-____
+        ```
+    - For `ig->en` for 20k vocab size, you'll do the same:
+        ```bash
+        src=ig
+        tgt=en
+        size=20k
+        name=lafandIgEn20 #make this name unique to your task
+        ```
+    ____
 The sole aim of this revision was to ease the process after attending to many requests from volunteers training on separate languages.
 
 The idea is to enable very few tweaking in order to successfully run the experiments.
