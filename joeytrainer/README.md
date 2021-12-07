@@ -34,7 +34,7 @@ If you don't have Joey NMT already installed on your system, this file takes car
 
     - For `en->ig` for 10k, you run `bash create_and_train.sh en ig 10k lafandEnIg10`. 
     
-    `lafandEnIg10` is just a name I gave it.
+        `lafandEnIg10` is just a name I gave it.
 
     - For `ig->en` for 20k vocab size, you run `bash create_and_train.sh ig en 20k lafandIgEn20`
 
