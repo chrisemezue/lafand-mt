@@ -22,15 +22,7 @@ Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/m
 4. `bash setup.sh`:
 If you don't have Joey NMT already installed on your system, this file creates a virtual environment called jnmt, clones the joeynmt github page and install the needed requirement. 
 
-5. The `vocab_process.sh`. This file has the following lines of code:
-    ```bash
-    src=en
-    tgt=ig
-    bash train_sp.sh $src $tgt
-    bash apply_sp.sh $src $tgt
-    bash buildvocab.sh $src $tgt
-    ```
-    All you need to do is change the `src` and `tgt` to your source and target languages respectively.
+5. `bash vocab_process.sh SRC TGT` where you edit `SRC`  and `TGT` to your source and target languages respectively. For example, if your source language is `en` and my target language is `yo`, you run `bash vocab_process.sh en yo`. 
 
 6. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
 
@@ -46,13 +38,13 @@ If you don't have Joey NMT already installed on your system, this file creates a
             size=10k
             name=lafandEnIg10 #make this name unique to your task
             ```
-        - For `ig->en` for 20k vocab size, you'll do the same:
-            ```bash
-            src=ig
-            tgt=en
-            size=20k
-            name=lafandIgEn20 #make this name unique to your task
-            ```
+    - For `ig->en` for 20k vocab size, you'll do the same:
+        ```bash
+        src=ig
+        tgt=en
+        size=20k
+        name=lafandIgEn20 #make this name unique to your task
+        ```
 ____
 The sole aim of this revision was to ease the process after attending to many requests from volunteers training on separate languages.
 
