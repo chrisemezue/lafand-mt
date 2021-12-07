@@ -14,7 +14,7 @@ Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/m
     rsync -a <PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE> <PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>/joeytrainer/data/JW
     ```
     and edit `<PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE>` and `<PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>` accordingly. 
-    
+
     > TO DO: Make this process easier.
 
 3. `bash install_spm.sh` to install the sentencepiece model if you don't have it. Look at the `install_spm` folder if you are running experiments on a cluster.
@@ -38,13 +38,13 @@ If you don't have Joey NMT already installed on your system, this file creates a
 
     For example, say I want to train `en->ig` for 10k and `ig->en` for 20k, then I will create two `.sh` files as follows:
 
-    - For `en->ig` for 10k, you only need to create a copy of the `create_and_train.sh` file and edit the following :
+    - For `en->ig` for 10k, you only need to create a copy of the `create_and_train.sh` file and edit the following:
+            
             ```bash
             src=en
             tgt=ig
             size=10k
             name=lafandEnIg10 #make this name unique to your task
-
             ```
         - For `ig->en` for 20k vocab size, you'll do the same:
             ```bash
