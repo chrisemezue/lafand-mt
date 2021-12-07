@@ -1,4 +1,4 @@
-## Running Lafand-MT experiments FOR ANY LANGUAGE (Beta testing)
+## Running Lafand-MT experiments FOR ANY LANGUAGE (Beta testing) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13yVM4b7T74GDbGwDl0bPT-Ry0S8_rk48?usp=sharing)
 
 This is to run the JoeyNMT experiments on `joeytrainer` with ease.
 
@@ -22,29 +22,19 @@ Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/m
 4. `bash setup.sh`:
 If you don't have Joey NMT already installed on your system, this file creates a virtual environment called jnmt, clones the joeynmt github page and install the needed requirement. 
 
-5. `bash vocab_process.sh SRC TGT` where you edit `SRC`  and `TGT` to your source and target languages respectively. For example, if your source language is `en` and my target language is `yo`, you run `bash vocab_process.sh en yo`. 
+5. `bash vocab_process.sh SRC TGT` where you edit `SRC`  and `TGT` to your source and target languages respectively. For example, if your source language is `en` and your target language is `yo`, you run `bash vocab_process.sh en yo`. 
 
-6. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
+6. `bash create_and_train.sh SRC TGT SIZE TASK_NAME`. This file merges the `createconfig.sh` and `train.sh` files into one. 
 
-    For each language direction and vocabulary size, you create and run a separate `create_and_run.sh` file. 
+    For each language direction and vocabulary size, you create and run `create_and_train.sh` and change the arguments. 
 
     For example, say I want to train `en->ig` for 10k and `ig->en` for 20k, then I will create two `.sh` files as follows:
 
-    - For `en->ig` for 10k, you only need to create a copy of the `create_and_train.sh` file and edit the following:
-            
-            ```bash
-            src=en
-            tgt=ig
-            size=10k
-            name=lafandEnIg10 #make this name unique to your task
-            ```
-    - For `ig->en` for 20k vocab size, you'll do the same:
-        ```bash
-        src=ig
-        tgt=en
-        size=20k
-        name=lafandIgEn20 #make this name unique to your task
-        ```
+    - For `en->ig` for 10k, you run `bash create_and_train.sh en ig 10k lafandEnIg10`
+
+    - For `ig->en` for 20k vocab size, you run `bash create_and_train.sh ig en 20k lafandIgEn20`
+
+
 ____
 The sole aim of this revision was to ease the process after attending to many requests from volunteers training on separate languages.
 
