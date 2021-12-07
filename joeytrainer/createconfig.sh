@@ -1,9 +1,14 @@
-#create config file to train a model over the JW300 en-yo corpus using 10k sp vocabulary 
-python scripts/createconfig.py --source_lang en --target_lang ig --task lafandEnIg10 --model_path  /home/mila/c/chris.emezue/lafand-mt/joeytrainer/joeynmt/ --data_path /home/mila/c/chris.emezue/lafand-mt/joeytrainer/data/enig/spdata/10k/JW/
+src=en
+tgt=ig
 
-python scripts/createconfig.py --source_lang ig --target_lang en --task lafandIgEn10 --model_path  /home/mila/c/chris.emezue/lafand-mt/joeytrainer/joeynmt/ --data_path /home/mila/c/chris.emezue/lafand-mt/joeytrainer/data/enig/spdata/10k/JW/
+#create config file to train your corpus on src -> tgt using 10k sp vocabulary 
+python scripts/createconfig.py --source_lang $src --target_lang $tgt --task lafandEnIg10 --model_path  ./joeynmt/ --data_path ./data/spdata/10k/JW/
 
-#for 20k
-python scripts/createconfig.py --source_lang en --target_lang ig --task lafandEnIg20 --model_path  /home/mila/c/chris.emezue/lafand-mt/joeytrainer/joeynmt/ --data_path /home/mila/c/chris.emezue/lafand-mt/joeytrainer/data/enig/spdata/20k/JW/
+#create config file to train your corpus on tgt -> src using 10k sp vocabulary 
+python scripts/createconfig.py --source_lang $tgt --target_lang $src --task lafandIgEn10 --model_path  ./joeynmt/ --data_path ./data/spdata/10k/JW/
 
-python scripts/createconfig.py --source_lang ig --target_lang en --task lafandIgEn20 --model_path  /home/mila/c/chris.emezue/lafand-mt/joeytrainer/joeynmt/ --data_path /home/mila/c/chris.emezue/lafand-mt/joeytrainer/data/enig/spdata/20k/JW/
+#create config file to train your corpus on src -> tgt using 20k sp vocabulary 
+python scripts/createconfig.py --source_lang $src --target_lang $tgt --task lafandEnIg20 --model_path  ./joeynmt/ --data_path ./data/spdata/20k/JW/
+
+#create config file to train your corpus on tgt -> src using 10k sp vocabulary 
+python scripts/createconfig.py --source_lang $tgt --target_lang $src --task lafandIgEn20 --model_path  ./joeynmt/ --data_path ./data/spdata/20k/JW/

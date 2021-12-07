@@ -1,6 +1,12 @@
-## Running Lafand-MT experiments FOR IGBO [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/13yVM4b7T74GDbGwDl0bPT-Ry0S8_rk48?usp=sharing)
+## Running Lafand-MT experiments FOR ANY LANGUAGE (Beta testing)
 
-1. `bash install_spm.sh` to install the Sentencepiece model if you don't have it.
+This is to run the JoeyNMT experiments on `joeytrainer` with ease.
+
+Comparing with the old version, we merge and simplify many of the `.sh` files to reduce the stress in editing the files.
+
+### Steps
+
+1. `bash install_spm.sh` to install the sentencepiece model if you don't have it. Look at the `install_spm` folder if you are running experiments on a cluster.
 
 2. `bash setup.sh`:
 If you don't have Joey NMT already installed on your system, this file creates a virtual environment called jnmt, clones the joeynmt github page and install the needed requirement. 
@@ -8,27 +14,40 @@ If you don't have Joey NMT already installed on your system, this file creates a
 3. `bash ProcessData.sh` (optional):
 Incase any your dataset is still in the tsv format, containing parallel texts, then it has to be separated to independent files for each of the languages. This the format that can be used for training. 
 
-4. `bash train_sp.sh`:
-The sentencepiece.sh script is responsible for installing the sentencepiece package, training a sentence piece model and obtaining the vocabulary for the sentencepiece model. 
- - uncomment the second line in the file to install sentencepiece
- - Change the variable values to suit your need
-To train a sentence piece of a particular vocabulary size for a language pair, you can use the following command, check the `train_sp.sh` and change the command line argument accordingly. 
+4. The `vocab_process.sh`. This file has the following lines of code:
+```
+src=en
+tgt=ig
+bash train_sp.sh $src $tgt
+bash apply_sp.sh $src $tgt
+bash buildvocab.sh $src $tgt
+```
+All you need to do is change the `src` and `tgt` to your source and target languages respectively.
 
-5. `bash apply_sp.sh`:
-encoding the training/dev/test sets using the already the trained model. 
-Change the variable values to suit your need. 
+5. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
 
-Check the `apply_sp.sh` file and make necessary changes to suit your need.
+For each language direction and vocabulary size, you create and run a separate `create_and_run.sh` file. 
 
-## To train the models. 
-1. `bash createconfig.sh`: Create a configuration file. It contains the model parameters to use for training.
+For example, say I want to train `en->ig` for 10k and `ig->en` for 20k, then I will create two `.sh` files as follows:
 
-2. `bash buildvocab.sh`: Get the vocabulary needed by JoeyNMT
+- For `en->ig` for 10k, you only need to create a copy of the `create_and_train.sh` file and edit the following :
+```
+src=en
+tgt=ig
+size=10k
+name=lafandEnIg10 #make this name unique to your task
 
-3. `bash train.sh`: Run the train script
+```
+- For `ig->en` for 20k vocab size, you'll do the same:
+```
+src=ig
+tgt=en
+size=20k
+name=lafandIgEn20 #make this name unique to your task
+```
+____
+The sole aim of this revision was to ease the process after attending to many requests from volunteers training on separate languages.
 
-
-
- 
-
+The idea is to enable very few tweaking in order to successfully run the experiments.
+This is still in beta mode. Please communicate all issues as Github issues or better still,  pull requests. Alternatively you can contact Chris Emezue on the Masakhane Slack. 
 
