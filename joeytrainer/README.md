@@ -2,16 +2,24 @@
 
 This is to run the JoeyNMT experiments on `joeytrainer` with ease.
 
-Comparing with the old version, we merge and simplify many of the `.sh` files to reduce the stress in editing the files.
+Compared with the [old version](https://github.com/masakhane-io/lafand-mt/tree/main/joeytrainer), we merge and simplify many of the `.sh` files to reduce the stress in editing the files.
 
 ### Steps
+1. Clone this repository: `git clone -b general https://github.com/chrisemezue/lafand-mt.git `
 
-1. `bash install_spm.sh` to install the sentencepiece model if you don't have it. Look at the `install_spm` folder if you are running experiments on a cluster.
+2. Working with data. Your data needs to be of the form [here](https://github.com/chrisemezue/lafand-mt/tree/general/joeytrainer/data/JW) in order to work with this repository.   
 
-2. `bash setup.sh`:
+It is important to have the data saved in the `JW` directory. To do this simply run the code below:
+```
+rsync -a <PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE> <PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>/joeytrainer/data/JW
+```
+and edit `<PATH_TO_DIR_WHERE_YOUR_TRAIN_FILES_ARE>` and `<PATH_TO_WHERE_YOU_CLONED_LAFAND_MT>` accordingly. 
+3. `bash install_spm.sh` to install the sentencepiece model if you don't have it. Look at the `install_spm` folder if you are running experiments on a cluster.
+
+4. `bash setup.sh`:
 If you don't have Joey NMT already installed on your system, this file creates a virtual environment called jnmt, clones the joeynmt github page and install the needed requirement. 
 
-3. The `vocab_process.sh`. This file has the following lines of code:
+5. The `vocab_process.sh`. This file has the following lines of code:
     ```bash
     src=en
     tgt=ig
@@ -21,7 +29,7 @@ If you don't have Joey NMT already installed on your system, this file creates a
     ```
     All you need to do is change the `src` and `tgt` to your source and target languages respectively.
 
-4. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
+6. `bash create_and_train.sh`. This file merges the `createconfig.sh` and `train.sh` files into one. 
 
     For each language direction and vocabulary size, you create and run a separate `create_and_run.sh` file. 
 

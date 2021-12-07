@@ -8,7 +8,7 @@ name=lafandEnIg10 #the name of the task. Will be used in the naming of the confi
 python scripts/createconfig.py --source_lang $src --target_lang $tgt --task $name --model_path  ./joeynmt/ --data_path ./data/spdata/$size/JW/
 
 #train on the config created above 
-cd joeynmt;
-mkdir -p ./${name}_${src}_${tgt}_transformer/
 
-python3 -m joeynmt train configs/transformer_${name}_${src}_${tgt}.yaml 
+mkdir -p .joeynmt/${name}_${src}_${tgt}_transformer/
+
+python3 -m joeynmt train joeynmt/configs/transformer_${name}_${src}_${tgt}.yaml 
