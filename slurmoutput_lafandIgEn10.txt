@@ -1,0 +1,41 @@
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Sun Nov 21 01:56:50 2021
+Driver Version                            : 460.56
+CUDA Version                              : 11.2
+
+Attached GPUs                             : 1
+GPU 00000000:39:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 26094
+            GPU Utilization               : 86 %
+            Memory Utilization            : 45 %
+            Max memory usage              : 7503 MiB
+            Time                          : 43913612 ms
+            Is Running                    : 0
+
+Sun Nov 21 01:56:50 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.56       Driver Version: 460.56       CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Quadro RTX 8000     Off  | 00000000:39:00.0 Off |                  Off |
+| 44%   61C    P0    93W / 260W |      0MiB / 48601MiB |     96%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
